@@ -4,9 +4,18 @@ import _ from "lodash";
 import { Bar } from "react-chartjs-2";
 import PropTypes from "prop-types";
 import { sortEntries, getLabels, getDeals } from "./helper";
+import ReactLoading from "react-loading";
+import styled from "styled-components";
 
 const API = `${process.env.REACT_APP_API_URL}/deals.json?api_key=${process.env.REACT_APP_API_KEY}`;
 
+const Loading = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+`;
 function Home() {
   const [dataSet, setDataSet] = useState({});
   const [options, setOptions] = useState({});
@@ -89,7 +98,18 @@ function Home() {
   }, []);
 
   return (
-    <>{isLoading == false ? <Bar data={dataSet} options={options} /> : false}</>
+    <>
+      {isLoading == false ? (
+        <Bar data={dataSet} options={options} />
+      ) : (
+        <Loading>
+          <div>
+            <ReactLoading type={"bars"} color={"grey"} />
+            Loading ...
+          </div>
+        </Loading>
+      )}
+    </>
   );
 }
 

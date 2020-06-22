@@ -1,24 +1,45 @@
-# README
+# Pipeline Deals Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Solution to challenge implemented using RoR and ReactJS.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Run Bundler and yarn to install required packages.
 
-* System dependencies
+```bash
+bundler install
+```
+and
+```bash
+yarn install
+```
 
-* Configuration
+## API
+Add your api key to pipeline-deals/config/webpack/development.js 
 
-* Database creation
+```javascript
+process.env.REACT_APP_API_KEY = your_key
+```
 
-* Database initialization
+## Run application
+```bash
+rails s
+```
 
-* How to run the test suite
+## Run tests
+```bash
+yarn test
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Test coverage
+```bash
+yarn test -- --coverage --watchAll=false
+```
 
-* Deployment instructions
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* ...
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

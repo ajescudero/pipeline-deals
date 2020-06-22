@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home <ReactLoading /> should render loading spinner 1`] = `undefined`;
+
+exports[`Home should render correctly in "debug" mode 1`] = `
+<Fragment>
+  <styled.div>
+    <div>
+      <Loading
+        color="grey"
+        delay={0}
+        height={64}
+        type="bars"
+        width={64}
+      />
+      Loading ...
+    </div>
+  </styled.div>
+</Fragment>
+`;

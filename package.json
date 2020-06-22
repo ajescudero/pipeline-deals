@@ -2,24 +2,78 @@
   "name": "pipeline-deals",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-react-constant-elements": "^7.10.1",
+    "@babel/plugin-transform-react-inline-elements": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
     "@rails/webpacker": "5.1.1",
     "axios": "^0.19.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-pure-class-to-function": "^1.0.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "bootstrap": "^4.5.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "chart": "^0.1.2",
     "chart.js": "^2.9.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
+    "jest": "^26.0.1",
+    "jest-enzyme": "^7.1.2",
+    "jest-regex-util": "^26.0.0",
     "lodash": "^4.17.15",
     "material-ui": "^0.20.2",
+    "method": "^2.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.13.1",
     "react-loading": "^2.0.3",
     "styled-components": "^5.1.1",
-    "victory": "^34.3.10"
+    "test-utils": "^1.1.1",
+    "victory": "^34.3.10",
+    "webpack": "^4.43.0"
   },
   "devDependencies": {
+    "babel-jest": "^26.0.1",
+    "babel-loader": "^8.1.0",
+    "babel-preset-es2015": "^6.24.1",
     "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "jest": {
+    "roots": [
+      "spec/javascript"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "app/javascript"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/spec/javascript/setupTests.js"
+    ],
+    "testRegex": "/*.test.jsx$",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
+    ],
+    "coverageDirectory": "test-coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    }
   }
 }
